@@ -1,0 +1,39 @@
+#name: Dawson Belk
+#GUI testing
+
+from Tkinter import *
+import tkMessageBox
+global me
+me = Tk()
+global r 
+
+def create2nd(word,r,c):
+    go = Toplevel(me)
+    button = Button(me, text = word, command = stop).grid(row = r, column = c)
+def stop():
+    return
+def fun1():
+     create2nd("hi1",1,1)
+
+def fun2():
+    create2nd("hi2",2,2)
+
+def fun3():
+    create2nd("hi3",3,1)
+
+def create1st():
+    menubar = Menu(me)
+    action = Menu(menubar, tearoff = 0)
+    action.add_command(label = "Play", command = fun1)
+    action.add_command(label = "Stop", command = fun2)
+    action.add_separator()
+    action.add_command(label = "Return", command = fun3)
+    menubar.add_cascade(label = "Actions", menu = action)
+    me.config(menu = menubar)
+
+
+create1st()
+me.mainloop()
+
+    
+    
